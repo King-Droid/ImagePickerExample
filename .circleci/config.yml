@@ -3,7 +3,7 @@
 #
 
 defaults: &defaults
-  working_directory: ~/code
+  working_directory: ~/ImagePickerExample/app
   docker:
     - image: circleci/android:api-28-alpha
   environment:
