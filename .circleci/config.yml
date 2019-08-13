@@ -36,7 +36,7 @@ jobs:
           command: echo $ENCODED_KEYSTORE | base64 -di >> ${KEYSTORE}
       - run:
           name: Build App
-          command: ./gradlew :app:assembleDebug
+          command: ./gradlew :app:assembleRelease
       - store_artifacts:
          path: app/build/outputs/
          destination: bundle
