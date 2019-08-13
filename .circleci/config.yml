@@ -32,6 +32,9 @@ jobs:
       - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: app/build/test-results
       - run:
+          name: Decode Android key store
+          command: echo $ENCODED_KEYSTORE | base64 -di >> ${KEYSTORE}
+      - run:
           name: Build App
           command: ./gradlew :app:assembleDebug
       - store_artifacts:
