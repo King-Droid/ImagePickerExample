@@ -51,11 +51,8 @@ jobs:
           # Must be absolute path or relative path from working_directory
           at: ~/code
       - run:
-          name: Decode Android key store
-          command: echo $ENCODED_KEYSTORE | base64 -di >> ${KEYSTORE}
-      - run:
           name: Build App
-          command: ./gradlew :app:clean :app:bundleFlecDevRelease
+          command: ./gradlew :app:clean :app:bundleDebug
       - store_artifacts:
           path: app/build/outputs/
           destination: bundle
